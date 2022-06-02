@@ -1,7 +1,7 @@
-const fs = require('node:fs');
+import fs from 'node:fs';
 
 console.log(
-	'loaded cjs-ext-cjs/index.cjs',
+	'loaded ts-ext-ts/index.tsx.ts',
 	JSON.stringify({
 		nodePrefix: Boolean(fs),
 		hasDynamicImport: Boolean(import('fs')),
@@ -19,4 +19,8 @@ console.log(
 	}),
 );
 
-module.exports = 1234;
+function valueNumber(value: number) {
+	return value;
+}
+
+export default valueNumber(1234);
